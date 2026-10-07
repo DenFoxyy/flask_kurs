@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Kursvalg</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Meld deg på et kurs</h1>
+    <form action="{{ url_for('kurs') }}" method="post">
+        <label for="kurs">Velg kurs:</label>
+        <select id="kurs" name="kurs" required>
+            <option value="" disabled selected>Velg kurs</option>
+            {% for kurs in kursliste %}
+                <option value="{{ kurs }}">{{ kurs }}</option>
+            {% endfor %}
+        </select>
+
+        <fieldset>
+            <legend>Velg nivå:</legend>
+            <label><input type="radio" name="nivaa" value="nybegynner"> Nybegynner</label>
+            <label><input type="radio" name="nivaa" value="viderekommen"> Middels</label>
+            <label><input type="radio" name="nivaa" value="avansert"> Avansert</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Interesser:</legend>
+            <label><input type="checkbox" name="interesser" value="python"> Python</label>
+            <label><input type="checkbox" name="interesser" value="web"> Web</label>
+            <label><input type="checkbox" name="interesser" value="linux"> Linux</label>
+        </fieldset>
+
+        <label><input type="checkbox" name="godtar" value="ja"> Jeg godtar vilkårene</label>
+        <button type="submit">Send inn</button>
+    </form>
+    <img src="{{ url_for('static', filename='images/sillycat.jpg') }}" alt="Kursbilde" class="kursbilde">
+</body>
+</html>

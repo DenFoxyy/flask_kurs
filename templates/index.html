@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Min Flask-side</title>
+</head>
+<body>
+    <h1>Velkommen!</h1>
+    <!-- <h2>Hei {{ navn }}</h2> -->
+    <!-- <p>Klasse: {{klasse }}</p> -->
+    <!-- <p>Fag: {{ fag }}</p> -->
+     {% if alder >= 18 %}
+     <p>Du er myndig.</p>
+     {% else %}
+     <p>Du er under 18 år.</p>
+     {% endif %}
+
+    <!-- <p>Denne siden kommer fra en Flask-template.</p> -->
+</body>
+</html>

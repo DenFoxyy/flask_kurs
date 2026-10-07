@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultat</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+</head>
+<body>
+    <h1>Resultat</h1>
+    <p>Kurs: {{ kurs }}</p>
+    <p>Nivå: {{ nivaa or "Ikke valgt" }}</p>
+    <p>Godtar vilkår: {{ 'Ja' if godtar else 'Nei' }}</p>
+    <p>Interesser: {{ interesser | join(', ') if interesser else "Ingen valgt" }}</p>
+</body>
+</html>
